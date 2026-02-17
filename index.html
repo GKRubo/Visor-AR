@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <title>Visor AR Profesional</title>
+    <title>Mi Modelo AR</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <style>
-        body { margin: 0; height: 100vh; width: 100vw; overflow: hidden; }
-        model-viewer { width: 100%; height: 100%; background-color: #f0f0f0; }
+        body { margin: 0; background-color: #f4f4f4; }
+        model-viewer {
+            width: 100%;
+            height: 100vh;
+            --progress-bar-color: #0000ff;
+        }
     </style>
 </head>
 <body>
@@ -17,8 +21,13 @@
         ar 
         ar-modes="webxr scene-viewer quick-look" 
         camera-controls 
-        auto-rotate 
-        shadow-intensity="1">
+        shadow-intensity="1" 
+        auto-rotate
+        touch-action="pan-y">
+        
+        <div slot="progress-bar" style="text-align: center; padding-top: 20px;">
+            Cargando modelo...
+        </div>
     </model-viewer>
 
 </body>
