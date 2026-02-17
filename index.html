@@ -1,16 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Mi Modelo AR</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Visor Realidad Aumentada</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <style>
-        body { margin: 0; background-color: #f4f4f4; }
-        model-viewer {
-            width: 100%;
-            height: 100vh;
-            --progress-bar-color: #0000ff;
+        body { margin: 0; background-color: #f8f9fa; }
+        model-viewer { width: 100%; height: 100vh; }
+        
+        /* Estilo del botón de AR */
+        #ar-button {
+            background-color: #007bff;
+            border-radius: 30px;
+            border: none;
+            color: white;
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 15px 30px;
+            font-family: sans-serif;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+            cursor: pointer;
         }
     </style>
 </head>
@@ -22,12 +35,12 @@
         ar-modes="webxr scene-viewer quick-look" 
         camera-controls 
         shadow-intensity="1" 
-        auto-rotate
-        touch-action="pan-y">
+        auto-rotate>
         
-        <div slot="progress-bar" style="text-align: center; padding-top: 20px;">
-            Cargando modelo...
-        </div>
+        <button slot="ar-button" id="ar-button">
+            🚀 VER EN MI ESPACIO
+        </button>
+
     </model-viewer>
 
 </body>
